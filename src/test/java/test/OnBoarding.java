@@ -1,5 +1,6 @@
 package test;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
@@ -18,7 +19,7 @@ import static org.junit.Assert.assertTrue;
 public class OnBoarding {
 
     static WebDriver driver;
-    Logger Log = Logger.getLogger ("test");
+    static Logger Log = Logger.getLogger ("test");
     CareerForm career = new CareerForm();
     PeronalForm personal = new PeronalForm();
 
@@ -95,6 +96,11 @@ public class OnBoarding {
         assertEquals("couldn't find about form", true, driver.findElement(userLinkedIn).isDisplayed());
 
     }
-
+    @AfterClass
+    public static void teardown() throws InterruptedException {
+        sleep(1000);
+        Log.info("teardown - closing driver");
+        driver.close();
+    }
 
 }

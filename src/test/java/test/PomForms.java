@@ -5,10 +5,15 @@ import org.openqa.selenium.WebDriver;
 
 import java.util.logging.Logger;
 
-class CareerForm {
-
+class BaseForm {
     static WebDriver driver;
     Logger Log = Logger.getLogger ("test");
+}
+
+class CareerForm extends BaseForm {
+
+//    static WebDriver driver;
+//    Logger Log = Logger.getLogger ("test");
 
     // POM - career
     By city = By.id("geocomplete");
@@ -17,10 +22,10 @@ class CareerForm {
     By buttonNext = By.xpath("//button[@class='actions__next']");
 }
 
-class PeronalForm {
+class PeronalForm extends BaseForm{
 
-    static WebDriver driver;
-    Logger Log = Logger.getLogger ("test");
+//    static WebDriver driver;
+//    Logger Log = Logger.getLogger ("test");
 
     // POM - personal
     By firstName = By.id("user-first-name-input");
